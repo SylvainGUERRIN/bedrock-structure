@@ -9,6 +9,7 @@
  */
 
 use Roots\WPConfig\Config;
+use Timber\Timber;
 
 /**
  * Directory containing all of the site's files
@@ -46,6 +47,13 @@ if (file_exists($root_dir . '/.env')) {
  * Default: production
  */
 define('WP_ENV', env('WP_ENV') ?: 'production');
+
+/**
+ * Timber change location of templates
+ */
+Timber::$locations = array(
+    dirname(__DIR__) . '/views'
+);
 
 /**
  * URLs

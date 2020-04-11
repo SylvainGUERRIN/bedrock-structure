@@ -6,8 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const CSSLoader = () => {
     const postCSSPlugins = [require('css-mqpacker')()];
-    if(isProduction){
-        postCSSPlugins.push(require('autoprefixer'))
+    if (isProduction) {
+        postCSSPlugins.push(require('autoprefixer'));
         postCSSPlugins.push(require('cssnano')())
     }
     return{
@@ -36,7 +36,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, outputPath),
-        publicPath: isProduction ? './' : 'http://localhost:3000',
+        publicPath: isProduction ? './' : 'http://localhost:3000/',
         filename: isProduction ? '[name].[hash].js' : '[name].js'
     },
     devServer: {
