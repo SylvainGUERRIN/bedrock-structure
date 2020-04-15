@@ -1,0 +1,63 @@
+// variables
+// ==========
+$f-montserrat: 'Monserrat Bold', sans-serif;
+$f-open-sans: 'OpenSans Light', sans-serif;
+
+// Font face
+// ==========
+@include font-face('Montserrat', 'fonts/Montserrat/Montserrat-Light', 300, null, ttf)
+@include font-face('Montserrat', './fonts/Montserrat/Montserrat-Bold', 700, null, ttf)
+
+@include font-face('OpenSans', './fonts/Open_Sans/OpenSans-Light', 300, null, ttf)
+
+// Base
+// ==========
+html, body{
+  font-size: 24px;
+  line-height: 34px;
+  font-family: $f-open-sans;
+  color: $black;
+}
+strong{
+  font-weight: bold;
+}
+em{
+  font-style: italic;
+}
+mark{
+  background-color: transparent;
+  position: relative;
+}
+mark::before{
+  content: '';
+  position: absolute;
+  height: 38px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -3px;
+  right: -3px;
+  border-right: 4px;
+  display: inline-block;
+  background-color: $yellow;
+  font-weight: 600;
+  font-style: italic;
+  z-index: -1;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+// Styles
+// ==========
+%h1, .h1{
+  font-family: $f-montserrat;
+  font-size: 64px;
+  line-height: 1.15;
+}
+%h2, .h2{
+  font-family: $f-montserrat;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: bold;
+}

@@ -1,0 +1,11 @@
+$space: 8px;
+
+@function space($i){
+  @return calc(var(--gap) * #{$i});
+}
+
+@each $i in 1, 2, 3, 4 {
+  .mb-#{$i} {
+    margin-bottom: space($i);
+  }
+}

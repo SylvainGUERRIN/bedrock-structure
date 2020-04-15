@@ -1,0 +1,16 @@
+.menu{
+  position: absolute;
+  top: space(3);
+  right: space(3);
+  display: flex;
+}
+
+.menu a {
+  font-size: 18px;
+  font-family: $f-montserrat;
+}
+
+.menu a + a{
+  display: inline-block;
+  margin-left: space(3);
+}
