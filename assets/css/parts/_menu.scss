@@ -6,11 +6,12 @@
 }
 
 .menu a {
+  @extend %underlined;
   font-size: 18px;
   font-family: $f-montserrat;
 }
 
-.menu a + a{
+.menu li + li{
   display: inline-block;
   margin-left: space(3);
 }

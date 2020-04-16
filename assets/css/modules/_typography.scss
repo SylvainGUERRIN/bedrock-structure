@@ -61,3 +61,19 @@ a{
   line-height: 1.2;
   font-weight: bold;
 }
+%underlined{
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  background-position: left 0 bottom 0;
+  transition: background-size .3s;
+  background-image: linear-gradient(transparent calc(100% - 3px), $black 100%);
+  //background-image: linear-gradient(transparent calc(100% - .4em), rgba($black, .4) .4em);
+  //@for $i from 1 through length($categories){
+  //  .category-#{nth($categories, $i)} & {
+  //    background-image: linear-gradient(transparent calc(100% - .4em), nth($secondary, $i) .4em);
+  //  }
+  //}
+  &:hover, &.active {
+    background-size: 100% 100%;
+  }
+}
