@@ -54,6 +54,9 @@ a{
   font-family: $f-montserrat;
   font-size: 64px;
   line-height: 1.15;
+  @include down(600){
+    font-size: 50px;
+  }
 }
 %h2, .h2{
   font-family: $f-montserrat;

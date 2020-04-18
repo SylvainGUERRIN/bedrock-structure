@@ -19,7 +19,10 @@ $gap: 8px;
 @import 'modules/typography';
 @import 'modules/spacing';
 @import 'modules/wordpress';
+@import 'modules/blocs';
 
 // Parts
 // =========
 @import 'parts/menu.scss';
+@import 'parts/intro.scss';
+

@@ -1,0 +1,10 @@
+.homepage-intro__title{
+  @extend %h1;
+  max-width: 430px;
+  @include down(430){
+    max-width: 300px;
+  }
+}
+.homepage-intro__title span{
+  font-style: italic;
+}

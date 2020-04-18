@@ -1,0 +1,28 @@
+{#{% set blocs = post.meta('intro_homepage_image') %}#}
+{#{% set blocs = post.custom %}#}
+{#{{ dump(post) }}#}
+{#{% if blocs is not empty %}#}
+{#    {% for i, bloc in blocs %}#}
+{#        <div>#}
+{#            {{ dump(bloc) }}#}
+{#            {% include('blocs/' ~ bloc.acf_fc_layout ~ '.twig') with {data: bloc, index: i} %}#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#{% endif %}#}
+{% set blocImage = post.meta('intro_homepage_image') %}
+{% set blocTitle = post.meta('intro_homepage_titre') %}
+{% set blocText = post.meta('intro_homepage_texte') %}
+{% set blocTextHaut = post.meta('content_en_haut_a_droite') %}
+{% set blocTextBas = post.meta('content_en_bas_a_droite') %}
+
+{#{{ dump(post) }}#}
+<div class="homepage-intro">
+    <div class="homepage-intro__title"><h1>{{ blocTitle }}</h1></div>
+    {#put style in sass#}
+    <img src="{{ blocImage.url }}" alt="" style="width: 150px; height: 400px; object-fit: cover">
+    <div class="homepage-intro__content">
+        <p>{{ blocText }}</p>
+        <p>{{ blocTextHaut }}</p>
+        <p>{{ blocTextBas }}</p>
+    </div>
+</div>

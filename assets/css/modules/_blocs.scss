@@ -1,0 +1,7 @@
+.blocs{
+  margin-top: space(8);
+}
+
+.blocs > * + * {
+  margin-top: 100px;
+}
