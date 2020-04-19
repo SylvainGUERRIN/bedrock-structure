@@ -17,12 +17,22 @@
 
 {#{{ dump(post) }}#}
 <div class="homepage-intro">
-    <div class="homepage-intro__title"><h1>{{ blocTitle }}</h1></div>
-    {#put style in sass#}
-    <img src="{{ blocImage.url }}" alt="" style="width: 150px; height: 400px; object-fit: cover">
-    <div class="homepage-intro__content">
-        <p>{{ blocText }}</p>
-        <p>{{ blocTextHaut }}</p>
-        <p>{{ blocTextBas }}</p>
+    <div class="homepage-intro__title">
+        <h1>{{ blocTitle }}</h1>
+    </div>
+    <div class="homepage-intro__body">
+        <div class="homepage-intro__image">
+            <img src="{{ blocImage.url }}" alt="">
+        </div>
+        <div class="homepage-intro__content is-1">
+            <p>{{ blocText }}</p>
+        </div>
+        <div class="homepage-intro__content is-2">
+            <p>{{ blocTextHaut }}</p>
+        </div>
+        <div class="homepage-intro__content is-3">
+            <p>{{ blocTextBas }}</p>
+        </div>
+
     </div>
 </div>
