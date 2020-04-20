@@ -4,15 +4,22 @@ $yellow: #FFE1AD;
 $black: #06070B;
 $gap: 8px;
 
-:root{
-  --gap: #{$gap};
-  position: relative;
-}
-
 // Tools
 // =========
 @import "tools/reset";
 @import 'tools/mixins';
+
+// Variables CSS
+// ===============
+:root{
+  --gap: #{$gap};
+  --container-padding: #{8 * $gap};
+  position: relative;
+
+  @include down(700){
+    --container-padding: #{3 * $gap};
+  }
+}
 
 // Modules
 // =========

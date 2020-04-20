@@ -4,8 +4,12 @@
   @include down(430){
     max-width: 300px;
   }
-  padding: 0 space(8);
+  padding: 0 var(--container-padding);
   margin-bottom: -210px;
+
+  @include down(1340){
+    margin-bottom: -50px;
+  }
   //to see later
   //@include down(600){
   //  padding: 0 space(3);
@@ -13,40 +17,94 @@
 }
 .homepage-intro__title span{
   font-style: italic;
+  font-weight: 400;
 }
-
 .homepage-intro__body{
   max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 var(--container-padding);
   display: grid;
   grid-template-columns: 1fr 392px 1fr ;
   grid-template-rows: 1fr 1fr;
   grid-column-gap: space(8);
+  grid-template-areas: ". image bloc2"
+"bloc1 image bloc3";
 }
 .homepage-intro__image{
-  grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-area: image;
+  position: relative;
+  justify-self: center;
+  align-self: end;
+  //grid-column: 2;
+  //grid-row: 1 / span 2;
+}
+.homepage-intro__image::before{
+  content:'';
+  width: 124px;
+  height: 124px;
+  background: url(./images/brush-124px.png) center center no-repeat;
+  position: absolute;
+  top: -50px;
+  right: -50px;
 }
 .homepage-intro__image img{
   height: 600px;
   object-fit: cover;
 }
-
 .homepage-intro__content.is-1{
-  grid-row: 2;
+  grid-area: bloc1;
+  //grid-row: 2;
   align-self: end;
 }
-
 .homepage-intro__content.is-2{
-  grid-row: 1;
-  grid-column: 3;
+  grid-area: bloc2;
+  //grid-row: 1;
+  //grid-column: 3;
   text-align: right;
 }
 
 .homepage-intro__content.is-3{
-  grid-row: 2;
-  grid-column: 3;
+  grid-area: bloc3;
+  //grid-row: 2;
+  //grid-column: 3;
   align-self: end;
   text-align: right;
+}
+@include down(1020){
+  .homepage-intro__body{
+    grid-template-columns: 392px 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: space(8);
+    grid-template-areas: "image bloc1"
+    "image bloc2" "image bloc3";
+  }
+  .homepage-intro__image{
+    margin-top: 100px;
+  }
+  .homepage-intro__content{
+    text-align: right;
+  }
+}
+@include down(900){
+  .homepage-intro__body{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: space(4);
+    grid-template-areas: "bloc1" "image"
+    "bloc2" "bloc3";
+  }
+  .homepage-intro__title{
+    margin-bottom: 0;
+  }
+  .homepage-intro__image{
+    margin-top: 0;
+    align-self: center;
+  }
+  .homepage-intro__content{
+    text-align: justify!important;
+  }
+  .homepage-intro__image::before{
+    display: none;
+  }
 }

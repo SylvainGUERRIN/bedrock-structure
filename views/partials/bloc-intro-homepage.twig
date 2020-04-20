@@ -18,7 +18,7 @@
 {#{{ dump(post) }}#}
 <div class="homepage-intro">
     <div class="homepage-intro__title">
-        <h1>{{ blocTitle }}</h1>
+        <h1>{{ blocTitle | raw | nl2br }}</h1>
     </div>
     <div class="homepage-intro__body">
         <div class="homepage-intro__image">
