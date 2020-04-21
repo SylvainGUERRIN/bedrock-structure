@@ -1,0 +1,15 @@
+%shadow{
+  background: #FAFBFD;
+  border: 1px solid #CFD5E3;
+  box-shadow: 0 3px 8px #D9DEEA;
+  border-radius: 4px;
+
+  &hover{
+    box-shadow: 0 3px 10px #D9DEEA;
+
+  }
+}
+
+.shadow{
+  @extend %shadow;
+}
