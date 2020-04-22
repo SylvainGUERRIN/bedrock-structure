@@ -25,7 +25,7 @@ class Site extends \App\Site
     {
         $this->addType('case-study', [
             'menu_icon' => 'dashicons-welcome-learn-more',
-            'supports' => ['excerpt','title'],
+            'supports' => ['excerpt','title','thumbnail'],
             'menu_position' => 6
         ], 'Etude de cas', 'Etude de cas', false);
     }

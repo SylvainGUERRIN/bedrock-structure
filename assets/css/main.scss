@@ -23,9 +23,9 @@ $gap: 8px;
 
 // Modules
 // =========
+@import 'modules/spacing';
 @import 'modules/typography';
 @import 'modules/shadow';
-@import 'modules/spacing';
 @import 'modules/wordpress';
 @import 'modules/blocs';
 @import 'modules/images';
@@ -34,4 +34,4 @@ $gap: 8px;
 // =========
 @import 'parts/menu.scss';
 @import 'parts/intro.scss';
-
+@import 'modules/cases-studies.scss';

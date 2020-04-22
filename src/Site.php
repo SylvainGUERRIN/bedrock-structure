@@ -84,7 +84,7 @@ class Site extends \Timber\Site
             'menu_position' => null,
             'capability_type' => 'post',
             'map_meta_cap' => true,
-            'supports' => ['title', 'editor']
+            'supports' => ['title', 'editor','thumbnail']
         ];
 
         register_post_type($slug, array_merge($args, $options));

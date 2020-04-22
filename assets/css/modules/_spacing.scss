@@ -1,5 +1,13 @@
 $space: 8px;
 
+.container{
+  max-width: calc(1024px + 2 * var(--container-padding));
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @function space($i){
   @return calc(var(--gap) * #{$i});
 }

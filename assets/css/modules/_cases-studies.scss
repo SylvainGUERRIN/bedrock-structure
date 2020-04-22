@@ -1,0 +1,22 @@
+.case-studies__title{
+  @extend %h1;
+  font-size: 44px;
+  //margin-bottom: 1em;
+}
+.case-studies__body{
+  display: grid;
+  grid-gap: space(8);
+  grid-template: 400px 1fr / auto auto;
+}
+.case-studies__content{
+  grid-column: 2;
+  text-align: right;
+}
+.case-studies__item.is-1{
+  grid-column: 1;
+  grid-row: 1;
+}
+.case-studies__item.is-2{
+  grid-column: 1;
+  grid-row: 1;
+}

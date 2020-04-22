@@ -1,0 +1,53 @@
+<pre>
+{#    {{ dump(post) }}#}
+{#{{ dump(post.custom.cases_studies_article) }}#}
+{#{{ dump(post.meta('list_cases_studies_lien').link) }}#}
+{#    {{ dump(post.meta('list_cases_studies_lien')) }}#}
+{#{{ dump(post.meta('list_cases_studies_titre_2')) }}#}
+</pre>
+{#{{ dump(post.meta('list_cases_studies_image')) }}#}
+{#{{ dump(post) }}#}
+{% set blocTitleOne = post.meta('list_cases_studies_titre') %}
+{% set blocDescriptionOne = post.meta('list_cases_studies_description') %}
+{% set blocImgOne = post.meta('list_cases_studies_image') %}
+{% set blocLinkOne = post.meta('list_cases_studies_lien') %}
+
+{% set blocTitleTwo = post.meta('list_cases_studies_titre_2') %}
+{% set blocDescriptionTwo = post.meta('list_cases_studies_description_2') %}
+{% set blocImgTwo = post.meta('list_cases_studies_image_2') %}
+{% set blocLinkTwo = post.meta('list_cases_studies_lien_2') %}
+
+<div class="case-studies container">
+    <div class="case-studies__title">
+        {{ blocTitleOne  | raw | nl2br }}
+    </div>
+    <div class="case-studies__body">
+        <div class="case-studies__content formatted">
+            {{ blocDescriptionOne }}
+        </div>
+        <div class="case-studies__item is-1">
+            <figure>
+                <a href="{{ blocLinkOne.link }}">
+                    <img src="{{ blocImgOne.url }}" alt="{{ blocTitleOne }}">
+                </a>
+                <figcaption>A case study</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="case-studies__title">
+        {{ blocTitleTwo  | raw | nl2br }}
+    </div>
+    <div class="case-studies__body">
+        <div class="case-studies__content formatted">
+            {{ blocDescriptionTwo }}
+        </div>
+        <div class="case-studies__item is-2">
+            <figure>
+                <a href="{{ blocLinkTwo.link }}"></a>
+                <img src="{{ blocImgTwo.url }}" alt="{{ blocTitleTwo }}">
+                <figcaption>A Workflow</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
