@@ -24,11 +24,11 @@ strong{
 em{
   font-style: italic;
 }
-mark{
+%mark, mark{
   background-color: transparent;
   position: relative;
 }
-mark::before{
+%mark::before, mark::before{
   content: '';
   position: absolute;
   height: 38px;
@@ -38,7 +38,7 @@ mark::before{
   right: -3px;
   border-right: 4px;
   display: inline-block;
-  background-color: $yellow;
+  background-color: darkred;
   font-weight: 600;
   font-style: italic;
   z-index: -1;
@@ -46,6 +46,14 @@ mark::before{
 a{
   text-decoration: none;
   color: inherit;
+}
+
+a img{
+  transition: transform .3s;
+  @extend %shadow;
+}
+a:hover img{
+  transform: scale(1.1);
 }
 
 // Styles
@@ -87,5 +95,14 @@ a{
 .formatted{
   * + p{
     margin-top: space(3);
+  }
+  em{
+    font-style: italic;
+    font-weight: 600;
+  }
+  a{
+    position: relative;
+    @extend %mark;
+    text-decoration: underline;
   }
 }

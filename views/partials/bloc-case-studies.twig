@@ -1,10 +1,17 @@
-<pre>
-{#    {{ dump(post) }}#}
+{#<pre>#}
+{#    {{ dump(post.terms('case-study-type')) }}#}
+{#    {{ dump(items.terms('case-study-type')) }}#}
+{#    {{ dump(post.item) }}#}
+{#        {{ dump(post.terms('case-study-type')) }}#}
+{#    {{ dump(function('get_the_terms', item.post.terms, 'case-study-type')) }}#}
+{#    {{ dump(post.meta('cases_studies_article_2').term('case-study-type')) }}#}
+{#    {{ dump(term.type('case-study-type')) }}#}
+{#    {{ dump(Post.Meta('cases_studies_article')) }}#}
 {#{{ dump(post.custom.cases_studies_article) }}#}
 {#{{ dump(post.meta('list_cases_studies_lien').link) }}#}
 {#    {{ dump(post.meta('list_cases_studies_lien')) }}#}
 {#{{ dump(post.meta('list_cases_studies_titre_2')) }}#}
-</pre>
+{#</pre>#}
 {#{{ dump(post.meta('list_cases_studies_image')) }}#}
 {#{{ dump(post) }}#}
 {% set blocTitleOne = post.meta('list_cases_studies_titre') %}
@@ -18,6 +25,7 @@
 {% set blocLinkTwo = post.meta('list_cases_studies_lien_2') %}
 
 <div class="case-studies container">
+
     <div class="case-studies__title">
         {{ blocTitleOne  | raw | nl2br }}
     </div>
@@ -26,12 +34,13 @@
             {{ blocDescriptionOne }}
         </div>
         <div class="case-studies__item is-1">
-            <figure>
+            <div class="case-studies__image">
+                <span class="case-studies__type is-1">1| webapp</span>
                 <a href="{{ blocLinkOne.link }}">
                     <img src="{{ blocImgOne.url }}" alt="{{ blocTitleOne }}">
                 </a>
-                <figcaption>A case study</figcaption>
-            </figure>
+            </div>
+            <p>A case study</p>
         </div>
     </div>
 
@@ -43,11 +52,13 @@
             {{ blocDescriptionTwo }}
         </div>
         <div class="case-studies__item is-2">
-            <figure>
-                <a href="{{ blocLinkTwo.link }}"></a>
-                <img src="{{ blocImgTwo.url }}" alt="{{ blocTitleTwo }}">
-                <figcaption>A Workflow</figcaption>
-            </figure>
+            <div class="case-studies__image">
+                <span class="case-studies__type is-2">2| webapp</span>
+                <a href="{{ blocLinkTwo.link }}">
+                    <img src="{{ blocImgTwo.url }}" alt="{{ blocTitleTwo }}">
+                </a>
+            </div>
+            <p>A Workflow</p>
         </div>
     </div>
 </div>
