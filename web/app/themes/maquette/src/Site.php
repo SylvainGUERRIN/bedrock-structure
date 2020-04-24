@@ -28,6 +28,11 @@ class Site extends \App\Site
             'supports' => ['excerpt','title','thumbnail'],
             'menu_position' => 6
         ], 'Etude de cas', 'Etude de cas', false);
+        $this->addType('illustration', [
+            'menu_icon' => 'dashicons-admin-customizer',
+            'supports' => ['excerpt','title','editor','thumbnail'],
+            'menu_position' => 7
+        ], 'Illustration', 'Illustrations', false);
     }
 
     public function registerTaxonomies(): void

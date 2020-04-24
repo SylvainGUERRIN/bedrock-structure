@@ -1,0 +1,29 @@
+<pre>
+{#{{ dump(post.meta('custom')) }}#}
+{#    {{ dump(post.meta('illu_titre')) }}#}
+
+</pre>
+{% set blocIlluTitle = post.meta('illu_titre') %}
+{% set blocilluText = post.meta('illu_texte') %}
+{% set blocIlluImg = post.meta('illu_image') %}
+
+<div class="illustrations container">
+    <div class="illustrations__body">
+        <h2 class="illustrations__title">
+            {{ blocIlluTitle  | raw | nl2br }}
+        </h2>
+        {{ blocilluText }}
+    </div>
+    <a href="#" class="illustrations__image">
+        <img src="{{ blocIlluImg.url }}" alt="{{ blocIlluTitle }}">
+    </a>
+    <a href="#" class="illustrations__image">
+        <img src="https://picsum.photos/id/402/437" alt="">
+    </a>
+    <a href="#" class="illustrations__image">
+        <img src="https://picsum.photos/id/402/437" alt="">
+    </a>
+    <a href="#" class="illustrations__image">
+        <img src="https://picsum.photos/id/402/437" alt="">
+    </a>
+</div>

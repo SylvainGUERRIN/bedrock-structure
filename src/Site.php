@@ -17,6 +17,7 @@ class Site extends \Timber\Site
         add_action('init', [$this, 'registerMenus']);
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
+        add_theme_support('post-thumbnails');
         parent::__construct($site_name_or_id);
     }
 

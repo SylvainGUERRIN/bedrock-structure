@@ -16,4 +16,7 @@ $space: 8px;
   .mb-#{$i} {
     margin-bottom: space($i);
   }
+  .mt-#{$i} {
+    margin-top: space($i);
+  }
 }
