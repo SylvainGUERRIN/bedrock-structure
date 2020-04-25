@@ -3,6 +3,8 @@
 {#    {{ dump(post.meta('illu_titre')) }}#}
 
 </pre>
+{% set illustrations = repository('illustration', 'last') %}
+
 {% set blocIlluTitle = post.meta('illu_titre') %}
 {% set blocilluText = post.meta('illu_texte') %}
 {% set blocIlluImg = post.meta('illu_image') %}
@@ -14,6 +16,11 @@
         </h2>
         {{ blocilluText }}
     </div>
+    {% for illustration in illustrations %}
+        <a href="#" class="illustrations__image">
+            <img src="{{ illustration.thumbnail.src('full') }}" alt="">
+        </a>
+    {% endfor %}
     <a href="#" class="illustrations__image">
         <img src="{{ blocIlluImg.url }}" alt="{{ blocIlluTitle }}">
     </a>

@@ -2,6 +2,9 @@
 
 namespace Maquette;
 
+use Twig\Environment;
+use Twig\TwigFunction;
+
 class Site extends \App\Site
 {
     /**
@@ -11,7 +14,8 @@ class Site extends \App\Site
     public function __construct($site_name_or_id = null)
     {
         parent::__construct($site_name_or_id);
-        add_action('init', [$this, 'registerMenus']);
+//        add_action('init', [$this, 'registerMenus']);
+        add_filter('timber/twig', [$this, 'extendTwig']);
     }
 
     public function registerMenus(): void
@@ -38,5 +42,15 @@ class Site extends \App\Site
     public function registerTaxonomies(): void
     {
         $this->addTaxonomy('case-study-type', ['case-study'], "Type d'étude");
+    }
+
+    public function extendTwig(Environment $twig): Environment
+    {
+        $twig->addFunction(new TwigFunction('repository', function ($repository, $method, ...$args) {
+            $repository = ucfirst($repository);
+            $repository = "Maquette\\Repository\\{$repository}Repository";
+            return call_user_func_array("$repository::$method", $args);
+        }));
+        return $twig;
     }
 }
