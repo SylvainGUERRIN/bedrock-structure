@@ -29,11 +29,13 @@ $gap: 8px;
 @import 'modules/wordpress';
 @import 'modules/blocs';
 @import 'modules/images';
+@import 'modules/grid';
 
 // Parts
 // =========
 @import 'parts/menu.scss';
 @import 'parts/intro.scss';
+@import 'parts/footer.scss';
 @import 'modules/cases-studies.scss';
 @import 'modules/illustrations.scss';
 
