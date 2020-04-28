@@ -32,9 +32,9 @@
 }
 .case-studies__item{
   padding-left: 105px;
-  @include down(950){
-    padding-left: 50px;
-  }
+  //@include down(950){
+  //  padding-left: 105px;
+  //}
 }
 .case-studies__image{
   display: block;

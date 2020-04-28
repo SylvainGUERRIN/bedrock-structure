@@ -18,6 +18,9 @@
     <body class="{{ body_class }}">
     {{ function('wp_nav_menu', {theme_location: 'header', container: false, menu_class: 'menu'}) }}
     {% block body '' %}
+    <footer class="footer container">
+        Content &copy; {{ "now"|date("Y")}} Magnific portfolio
+    </footer>
     {{ function('wp_footer') }}
     </body>
 </html>

@@ -1,5 +1,35 @@
-.footer__title{
+.homepage-footer .grid2 > *:last-child{
+  text-align: right;
+}
+.homepage-footer__title{
   @extend %h2;
+  position: relative;
+  margin-top: 3em;
   margin-bottom: 1em;
+  max-width: 500px;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    top: -50px;
+    right: -150px;
+    background: url(./images/brush-124px.png) center center no-repeat;
+  }
+  @include down(700){
+    margin-top: 5em;
+    &::after{
+      top: -150px;
+      right: 0px;
+      left: 250px;
+    }
+  }
+  @include down(450){
+    &::after{
+      top: -150px;
+      right: 0px;
+      left: 100px;
+    }
+  }
 }
 
