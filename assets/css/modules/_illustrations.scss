@@ -1,3 +1,5 @@
+// Homepage
+// ===========
 .illustrations__title{
   @extend %h2;
   margin-bottom: 1em;
@@ -46,4 +48,29 @@
   //  grid-column-start: 1 / span 2;
   //  grid-row-start: 1;
   //}
+}
+
+// Page archive illustration
+// ===========================
+.illustration{
+  position: relative;
+  padding-left: 24px;
+}
+.illustration__title{
+  font-weight: bold;
+  margin-bottom: space(4);
+}
+.illustration + .illustration{
+  margin-top: space(8);
+}
+.illustration__date{
+  position: absolute;
+  left: -20px;
+  top: 68px;
+  transform-origin: 0 0;
+  transform: rotate(-90deg) translateX(-100%);
+
+  @include up(700){
+    left: -42px;
+  }
 }

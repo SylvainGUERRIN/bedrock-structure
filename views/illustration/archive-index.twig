@@ -1,0 +1,27 @@
+{% extends 'layouts/base.twig' %}
+
+{% block body %}
+    <main class="page">
+        <a href="{{ site.url }}" class="page-back">Back</a>
+        <h1 class="page-title">I draw</h1>
+        <div class="container">
+            {% for post in posts %}
+                <article class="illustration">
+                    <h2 class="illustration__title">{{ post.title }}</h2>
+                    <a href="{{ post.thumbnail.src('full') }}" title="{{ post.title }}">
+                        <img src="{{ post.thumbnail.src('full') }}" alt="{{ post.title }}">
+                    </a>
+                    <div class="illustration__date">{{ post.date("d/m/Y") }}</div>
+                </article>
+            {% endfor %}
+            <div class="pagination">
+                {% if posts.pagination.prev %}
+                    <a href="{{posts.pagination.prev.link}}" class="pagination-prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+                {% endif %}
+                {% if posts.pagination.next %}
+                    <a href="{{posts.pagination.next.link}}" class="pagination-next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

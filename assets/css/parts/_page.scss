@@ -1,0 +1,28 @@
+
+.page-back{
+  text-indent: -3000px;
+  overflow: hidden;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background: url(./icones/back-64px.png);
+  margin-left: var(--container-padding);
+  margin-right: var(--container-padding);
+  transition: transform .3s;
+
+  &:hover{
+    transform: translateX(-3px);
+  }
+}
+.page-title{
+  @extend %h1;
+  text-transform: uppercase;
+  margin-top: space(2);
+  margin-bottom: var(--container-padding);
+}
+
+.footer{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-style: italic;
+}

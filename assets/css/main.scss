@@ -30,6 +30,7 @@ $gap: 8px;
 @import 'modules/blocs';
 @import 'modules/images';
 @import 'modules/grid';
+@import 'modules/pagination';
 
 // Parts
 // =========
@@ -38,4 +39,5 @@ $gap: 8px;
 @import 'parts/footer.scss';
 @import 'modules/cases-studies.scss';
 @import 'modules/illustrations.scss';
-@import 'parts/generic.scss';
+@import 'parts/page';
+

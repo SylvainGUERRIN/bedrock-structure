@@ -58,6 +58,47 @@ a:hover img{
 
 // Styles
 // ==========
+.link, %link{
+  //display: block;
+  font-weight: 600;
+  font-style: italic;
+  display: inline-flex;
+  align-items: center;
+  @extend %underlined;
+  &::after{
+    display: inline-block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: url("./icones/next-14px.png");
+    margin-left: space(1);
+    transition: .3s;
+  }
+  &:hover::after{
+    transform: translateX(3px);
+  }
+}
+%link-left{
+  //display: block;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-style: italic;
+  @extend %underlined;
+  &::before{
+    display: inline-block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: url("./icones/next-14px.png");
+    margin-right: space(1);
+    transition: .3s;
+    transform: rotate(180deg);
+  }
+  &:hover::before{
+    transform: rotate(180deg) translateX(3px);
+  }
+}
 %h1, .h1{
   font-family: $f-montserrat;
   font-size: 64px;

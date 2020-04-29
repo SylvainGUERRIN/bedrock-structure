@@ -1,9 +1,10 @@
 $space: 8px;
 
 .container{
-  max-width: calc(1024px + 2 * var(--container-padding));
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
+  //max-width: calc(1024px + 2 * var(--container-padding));
+  max-width: 1024px;
+  //padding-left: var(--container-padding);
+  //padding-right: var(--container-padding);
   margin-left: auto;
   margin-right: auto;
 }
@@ -19,4 +20,8 @@ $space: 8px;
   .mt-#{$i} {
     margin-top: space($i);
   }
+}
+
+body{
+  padding: var(--container-padding);
 }

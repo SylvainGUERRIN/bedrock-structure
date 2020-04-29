@@ -1,0 +1,23 @@
+.pagination{
+  margin-top: 100px;
+  display: flex;
+}
+
+.pagination-next{
+  margin-left: auto;
+  @extend %link;
+}
+
+.pagination-prev{
+  @extend %link;
+  display: inline-flex !important;
+  flex-direction: row-reverse;
+  &::after{
+    margin-left: 0;
+    margin-right: space(1);
+    transform: rotate(180deg);
+  }
+  &:hover::after{
+    transform: rotate(180deg) translateX(3px);
+  }
+}
