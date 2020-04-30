@@ -17,7 +17,11 @@ class Site extends \Timber\Site
         add_action('init', [$this, 'registerMenus']);
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
+//        add_action('init', [$this, 'registerImages']);
+        add_theme_support('html5');
+        add_theme_support('title-tags');
         add_theme_support('post-thumbnails');
+        add_theme_support('responsive-embeds');
         parent::__construct($site_name_or_id);
     }
 
@@ -139,4 +143,9 @@ class Site extends \Timber\Site
 
         register_taxonomy($slug, $options, array_merge($args, $options));
     }
+
+//    private function registerImages(): void
+//    {
+//    }
+
 }

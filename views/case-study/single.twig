@@ -1,0 +1,22 @@
+{% extends 'layouts/base.twig' %}
+
+{% block body %}
+    <a href="{{ site.url }}" class="page-back">Back</a>
+    <pre>
+        {{ dump(post.meta('post_excerpt')) }}
+        {{ dump(post) }}
+    </pre>
+    <h1 class="page-title">{{ post.title }}</h1>
+    <div class="container">
+        <div class="grid2">
+            <div>
+                <h2 class="h2 mb-3">Overview</h2>
+                {{ post.post_excerpt }}
+            </div>
+            <div>
+                <h2 class="h2 mb-3">Role</h2>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/bloc-intro-homepage.twig' %}
+{% endblock %}

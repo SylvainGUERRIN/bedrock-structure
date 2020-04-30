@@ -53,4 +53,11 @@ class Site extends \App\Site
         }));
         return $twig;
     }
+
+    private function registerImages()
+    {
+        add_image_size('illustration', 500, 500, true);
+        add_image_size('illustration_big', 1000, 800, true);
+        add_image_size('illustration_small', 500, 400, true);
+    }
 }

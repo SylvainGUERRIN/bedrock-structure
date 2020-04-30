@@ -9,7 +9,7 @@
                 <article class="illustration">
                     <h2 class="illustration__title">{{ post.title }}</h2>
                     <a href="{{ post.thumbnail.src('full') }}" title="{{ post.title }}">
-                        <img src="{{ post.thumbnail.src('full') }}" alt="{{ post.title }}">
+                        <img src="{{ post.thumbnail.src('illustration_big') | resize(800, 500) }}" srcset="{{ post.thumbnail.src('illustration_small') }} 500w" sizes="100vw" alt="{{ post.title }}">
                     </a>
                     <div class="illustration__date">{{ post.date("d/m/Y") }}</div>
                 </article>
