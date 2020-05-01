@@ -2,21 +2,74 @@
 
 {% block body %}
     <a href="{{ site.url }}" class="page-back">Back</a>
-    <pre>
-        {{ dump(post.meta('post_excerpt')) }}
-        {{ dump(post) }}
-    </pre>
+{#    <pre>#}
+{#        {{ dump(post.meta('post_excerpt')) }}#}
+{#        {{ dump(post) }}#}
+{#    </pre>#}
     <h1 class="page-title">{{ post.title }}</h1>
     <div class="container">
-        <div class="grid2">
+        <div class="case-study-intro">
             <div>
                 <h2 class="h2 mb-3">Overview</h2>
                 {{ post.post_excerpt }}
+                <img src="{{ post.thumbnail.src('full') }}" alt="">
             </div>
             <div>
                 <h2 class="h2 mb-3">Role</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad maiores nisi repellat voluptatibus.
+                    Amet corporis dolores ipsam molestiae nisi placeat quia quidem ullam? Beatae cumque illo laboriosam
+                    quod repellat ullam!</p>
             </div>
         </div>
     </div>
-    {% include 'partials/bloc-intro-homepage.twig' %}
+    <div class="bloc is-black">
+        <div class="container">
+            <div class="grid2">
+                <div>
+                    <h2 class="h3 mb-3">consectetur adipisicing elit.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ducimus eum vero. Ipsam necessitatibus
+                        provident quaerat qui sit. At, ipsa maxime. Consequatur, libero natus nemo praesentium quaerat quia ratione
+                        vel!
+                    </p>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ducimus eum vero. Ipsam necessitatibus
+                        provident quaerat qui sit. At, ipsa maxime. Consequatur, libero natus nemo praesentium quaerat quia ratione
+                        vel!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bloc">
+        <div class="container">
+            <div class="grid2">
+                <div>
+                    <h3>1. At, ipsa maxime</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem est, non. Aperiam assumenda delectus dolores
+                        earum enim illo laborum magnam maxime omnis perferendis porro, possimus quia quos reiciendis sequi tempora.
+                    </p>
+                </div>
+                <div>
+                    <h3>2. At, ipsa maxime</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem est, non. Aperiam assumenda delectus dolores
+                        earum enim illo laborum magnam maxime omnis perferendis porro, possimus quia quos reiciendis sequi tempora.
+                    </p>
+                </div>
+                <div>
+                    <h3>3. At, ipsa maxime</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem est, non. Aperiam assumenda delectus dolores
+                        earum enim illo laborum magnam maxime omnis perferendis porro, possimus quia quos reiciendis sequi tempora.
+                    </p>
+                </div>
+                <div>
+                    <h3>4. At, ipsa maxime</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem est, non. Aperiam assumenda delectus dolores
+                        earum enim illo laborum magnam maxime omnis perferendis porro, possimus quia quos reiciendis sequi tempora.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    {% include 'partials/bloc-intro-homepage.twig' %}#}
 {% endblock %}

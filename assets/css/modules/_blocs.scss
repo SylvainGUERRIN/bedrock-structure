@@ -5,3 +5,17 @@
 .blocs > * + * {
   margin-top: 100px;
 }
+
+.bloc.is-black{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $black;
+  color: #ffffff;
+  margin-left: calc(var(--container-padding) * -1);
+  margin-right: calc(var(--container-padding) * -1);
+  margin-top: 100px;
+}
+
+.bloc + .bloc{
+  margin-top: 100px;
+}

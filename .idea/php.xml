@@ -23,6 +23,13 @@
       <path value="$PROJECT_DIR$/vendor/asm89/twig-cache-extension" />
       <path value="$PROJECT_DIR$/vendor/timber/timber" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/wp-cli" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/php-cli-tools" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/media-command" />
+      <path value="$PROJECT_DIR$/vendor/wp-cli/mustangostang-spyc" />
+      <path value="$PROJECT_DIR$/vendor/rmccue/requests" />
+      <path value="$PROJECT_DIR$/vendor/mustache/mustache" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
