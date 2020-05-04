@@ -21,6 +21,10 @@ $gap: 8px;
   }
 }
 
+::selection{
+  background: $yellow;
+}
+
 // Modules
 // =========
 @import 'modules/spacing';

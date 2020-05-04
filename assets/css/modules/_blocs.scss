@@ -13,6 +13,8 @@
   color: #ffffff;
   margin-left: calc(var(--container-padding) * -1);
   margin-right: calc(var(--container-padding) * -1);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
   margin-top: 100px;
 }
 

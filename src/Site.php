@@ -1,6 +1,9 @@
 <?php
 namespace App;
 
+use Twig\Environment;
+use Twig\TwigFunction;
+
 /**
  * Class Site
  */
@@ -17,6 +20,7 @@ class Site extends \Timber\Site
         add_action('init', [$this, 'registerMenus']);
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
+        add_filter('timber/twig', [$this, 'extendTwig']);
 //        add_action('init', [$this, 'registerImages']);
         add_theme_support('html5');
         add_theme_support('title-tags');
@@ -32,6 +36,15 @@ class Site extends \Timber\Site
         wp_register_script('main', $asset->getPath('main.js'), [], '1.0.0', true);
         wp_enqueue_script('main');
         wp_enqueue_style('main');
+    }
+
+    public function extendTwig(Environment $twig): Environment
+    {
+        $twig->addFunction(new TwigFunction('dump', static function (...$args) {
+            dump($args);
+            return '';
+        }));
+        return $twig;
     }
 
     public function registerMenus(): void
@@ -147,5 +160,4 @@ class Site extends \Timber\Site
 //    private function registerImages(): void
 //    {
 //    }
-
 }

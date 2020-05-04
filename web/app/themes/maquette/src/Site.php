@@ -15,7 +15,6 @@ class Site extends \App\Site
     {
         parent::__construct($site_name_or_id);
 //        add_action('init', [$this, 'registerMenus']);
-        add_filter('timber/twig', [$this, 'extendTwig']);
         add_action('init', [$this, 'addMarkButton']);
     }
 
@@ -47,6 +46,7 @@ class Site extends \App\Site
 
     public function extendTwig(Environment $twig): Environment
     {
+        $twig = parent::extendTwig($twig);
         $twig->addFunction(new TwigFunction('repository', function ($repository, $method, ...$args) {
             $repository = ucfirst($repository);
             $repository = "Maquette\\Repository\\{$repository}Repository";
