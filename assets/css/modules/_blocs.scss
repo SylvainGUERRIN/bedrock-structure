@@ -6,16 +6,32 @@
   margin-top: 100px;
 }
 
-.bloc.is-black{
+%bloc-colored{
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: $black;
-  color: #ffffff;
   margin-left: calc(var(--container-padding) * -1);
   margin-right: calc(var(--container-padding) * -1);
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
   margin-top: 100px;
+
+  & + %bloc-colored{
+    margin-top: 0;
+    padding-top: 0;
+    border-bottom: 0!important;
+  }
+}
+
+.bloc.is-black{
+  @extend %bloc-colored;
+  background-color: $black;
+  color: #ffffff;
+}
+
+.bloc.is-grey{
+  @extend %bloc-colored;
+  background-color: $grey;
+  border-bottom: 1px solid #979797;
 }
 
 .bloc + .bloc{

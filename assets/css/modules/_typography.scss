@@ -143,7 +143,7 @@ a:hover img{
 // Formatted
 // ==========
 .formatted{
-  * + p{
+  p, ul{
     margin-top: space(3);
   }
   em{
@@ -154,5 +154,28 @@ a:hover img{
     position: relative;
     @extend %mark;
     text-decoration: underline;
+  }
+  h2{
+    @extend %h2;
+    margin-bottom: space(3);
+  }
+  h3{
+    font-weight: bold;
+    margin-bottom: space(1);
+    margin-top: space(4);
+  }
+  & > *:first-child{
+    margin-top: 0;
+  }
+  li::before{
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    vertical-align: baseline;
+    transform: translateY(-4px);
+    margin-right: space(1);
+    background-color: currentColor;
   }
 }
