@@ -1,6 +1,7 @@
 $space: 8px;
 
 .container{
+  position: relative;
   //max-width: calc(1024px + 2 * var(--container-padding));
   max-width: 1024px;
   //padding-left: var(--container-padding);

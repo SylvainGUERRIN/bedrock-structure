@@ -140,6 +140,17 @@ a:hover img{
   }
 }
 
+// text-pivoted
+//==============
+%text-pivoted, .text-pivoted{
+  position: absolute;
+  bottom: 0;
+  left: -60px;
+  transform-origin: left bottom;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}
+
 // Formatted
 // ==========
 .formatted{

@@ -43,12 +43,7 @@
   position: relative;
 }
 .case-studies__type{
-  position: absolute;
-  bottom: 0;
-  left: -60px;
-  transform-origin: left bottom;
-  text-transform: uppercase;
-  transform: rotate(-90deg);
+  @extend %text-pivoted;
   @include down(950){
     padding-left: -10px;
   }

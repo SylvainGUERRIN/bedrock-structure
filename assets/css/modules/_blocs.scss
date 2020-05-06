@@ -16,9 +16,9 @@
   margin-top: 100px;
 
   & + %bloc-colored{
-    margin-top: 0;
+    margin-top: -1px;
     padding-top: 0;
-    border-bottom: 0!important;
+    border-top: 0px;
   }
 }
 
