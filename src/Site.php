@@ -17,21 +17,31 @@ class Site extends \Timber\Site
     public function __construct($site_name_or_id = null)
     {
         add_action('wp_enqueue_scripts', [$this, 'registerAssets']);
+        add_action('wp_footer', function () {
+            wp_dequeue_script('wp-embed');
+        });
         add_action('init', [$this, 'registerMenus']);
         add_action('init', [$this, 'registerPostTypes']);
         add_action('init', [$this, 'registerTaxonomies']);
         add_filter('timber/twig', [$this, 'extendTwig']);
 //        add_action('init', [$this, 'registerImages']);
+        remove_action('wp_head', '_print_emoji_detection_script', 7);
+        remove_action('wp_print_styles', 'print_emoji_styles');
+//        add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
         add_theme_support('html5');
         add_theme_support('title-tags');
         add_theme_support('post-thumbnails');
         add_theme_support('responsive-embeds');
+        add_filter('xmlrpc_enabled', '__return_false');
+        remove_action('wp_head', 'rsd_link');
         parent::__construct($site_name_or_id);
     }
 
     public function registerAssets(): void
     {
         $asset = new Asset(get_stylesheet_directory() . '/assets');
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_script('wp-embed');
         wp_register_style('main', $asset->getPath('main.css'), [], '1.0.0');
         wp_register_script('main', $asset->getPath('main.js'), [], '1.0.0', true);
         wp_enqueue_script('main');

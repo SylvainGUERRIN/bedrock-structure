@@ -5,12 +5,16 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode=development"
+    "dev": "webpack-dev-server --mode=development",
+    "build": "rm -rf app/themes/maquette/assets && webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "flip-toolkit": "^7.0.9",
+    "turbolinks": "^5.2.0"
+  },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "css-loader": "^3.5.2",

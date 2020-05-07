@@ -1,6 +1,29 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
+{#    <div class="reveal">#}
+{#        <a href="{{ site.url }}" class="page-back reveal-1">Back</a>#}
+{#        #}{#    <pre>#}
+{#        #}{#        {{ dump(post.meta('post_excerpt')) }}#}
+{#        #}{#        {{ dump(post) }}#}
+{#        #}{#    </pre>#}
+{#        <h1 class="page-title reveal-2">{{ post.title }}</h1>#}
+{#        <div class="container">#}
+{#            <div class="case-study-intro">#}
+{#                <div>#}
+{#                    <h2 class="h2 mb-3 reveal-3">Overview</h2>#}
+{#                    {{ post.post_excerpt }}#}
+{#                    <img src="{{ post.thumbnail.src('full') }}" alt="">#}
+{#                </div>#}
+{#                <div>#}
+{#                    <h2 class="h2 mb-3 reveal-3">Role</h2>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad maiores nisi repellat voluptatibus.#}
+{#                        Amet corporis dolores ipsam molestiae nisi placeat quia quidem ullam? Beatae cumque illo laboriosam#}
+{#                        quod repellat ullam!</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
     <a href="{{ site.url }}" class="page-back">Back</a>
     {#    <pre>#}
     {#        {{ dump(post.meta('post_excerpt')) }}#}
@@ -12,7 +35,9 @@
             <div>
                 <h2 class="h2 mb-3">Overview</h2>
                 {{ post.post_excerpt }}
-                <img src="{{ post.thumbnail.src('full') }}" alt="">
+                <a href="#" class="js-flip" id="case-study-1-image">
+                    <img src="{{ post.thumbnail.src('full') }}" alt="">
+                </a>
             </div>
             <div>
                 <h2 class="h2 mb-3">Role</h2>
@@ -183,14 +208,14 @@
                 <picture>
                     <source media="(max-width: 500px)" srcset="https://picsum.photos/id/249/286/286">
                     <source media="(max-width: 750px)" srcset="https://picsum.photos/id/249/386/386">
-                    <img class="" src="https://picsum.photos/id/249/486/616" alt="">
+                    <img src="https://picsum.photos/id/249/486/616" alt="">
                 </picture>
             </a>
             <a class="mosaic__square" href="#">
                 <picture>
                     <source media="(max-width: 500px)" srcset="https://picsum.photos/id/242/286/286">
                     <source media="(max-width: 750px)" srcset="https://picsum.photos/id/242/386/386">
-                    <img class="" src="https://picsum.photos/id/242/486/486" alt="">
+                    <img src="https://picsum.photos/id/242/486/486" alt="">
                 </picture>
             </a>
         </div>
