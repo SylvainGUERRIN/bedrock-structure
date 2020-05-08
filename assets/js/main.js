@@ -1,6 +1,11 @@
 import Turbolinks from "turbolinks"
 // import "./modules/scrollreveal"
 import { Flipper } from 'flip-toolkit'
+import Rellax from 'rellax'
+
+const rellax = new Rellax('.symbol', {
+    center: true
+})
 
 const flipper = new Flipper({
     element: document,

@@ -32,6 +32,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .fade{
+    transition: none!important;
+  }
+}
+
 // ScrollReveal
 // =============
 .reveal-loaded .reveal [class*="reveal-"] {

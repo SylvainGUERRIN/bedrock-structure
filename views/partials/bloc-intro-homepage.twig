@@ -17,20 +17,20 @@
 
 {#{{ dump(post) }}#}
 <div class="homepage-intro">
-    <div class="homepage-intro__title">
+    <div class="homepage-intro__title fade">
         <h1>{{ blocTitle | raw | nl2br }}</h1>
     </div>
     <div class="homepage-intro__body">
-        <div class="homepage-intro__image">
+        <div class="homepage-intro__image fade2">
             <img src="{{ blocImage.url }}" alt="">
         </div>
-        <div class="homepage-intro__content is-1">
+        <div class="homepage-intro__content is-1 fade3">
             <p>{{ blocText }}</p>
         </div>
-        <div class="homepage-intro__content is-2">
+        <div class="homepage-intro__content is-2 fade4">
             <p>{{ blocTextHaut }}</p>
         </div>
-        <div class="homepage-intro__content is-3">
+        <div class="homepage-intro__content is-3 fade5">
             <p>{{ blocTextBas }}</p>
         </div>
 

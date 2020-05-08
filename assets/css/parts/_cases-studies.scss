@@ -10,15 +10,23 @@
   margin-top: 1em;
   position: relative;
 }
-.case-studies__title::before{
+.case-studies__title span{
   position: absolute;
-  content: '';
   width: 124px;
   height: 124px;
   background: url(./images/brush-124px.png) center center no-repeat;
   left: -150px;
   top: 0;
 }
+//.case-studies__title::before{
+//  position: absolute;
+//  content: '';
+//  width: 124px;
+//  height: 124px;
+//  background: url(./images/brush-124px.png) center center no-repeat;
+//  left: -150px;
+//  top: 0;
+//}
 .case-studies__body{
   display: grid;
   grid-gap: space(8);

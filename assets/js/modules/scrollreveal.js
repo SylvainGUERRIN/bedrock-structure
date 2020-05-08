@@ -8,16 +8,31 @@ const options = {
 const handleIntersect = function (entries, observer) {
     entries.forEach(function (entry) {
         if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('in')
+            if (entry.target.dataset.delay) {
+                entry.target.style.transitionDelay = `.${entry.target.dataset.delay}s`
+            }
             entry.target.classList.remove('reveal')
             observer.unobserve(entry.target)
         }
     })
 }
+const observer = new IntersectionObserver(handleIntersect, options)
 
 document.documentElement.classList.add('reveal-loaded')
-window.addEventListener('turbolinks:load', function () {
+window.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver(handleIntersect, options)
     document.querySelectorAll('.reveal').forEach(function (r) {
         observer.observe(r)
     })
+})
+
+// document.addEventListener('turbolinks:render', function () {
+//     document.querySelectorAll('.fade').forEach(function (r) {
+//         observer.observe(r)
+//     })
+// })
+
+document.addEventListener('turbolinks:before-render', function () {
+    observer.takeRecords()
 })
